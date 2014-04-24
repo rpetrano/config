@@ -1,0 +1,24 @@
+# AUR packages should not be built from binaries. This is a
+# workaround. If you manage to build this lib32 package from
+# source, let the maintainer know and you will be helping the
+# Arch community.
+
+_pkgbase=libwbclient
+pkgname=lib32-${_pkgbase}
+pkgver=4.1.4
+pkgrel32=1
+pkgrel=1
+pkgdesc="Samba winbind client library (32 bits)"
+arch=('x86_64')
+url="http://www.samba.org"
+license=('GPL3')
+depends=('lib32-libbsd' "${_pkgbase}>=${pkgver}")
+source=("ftp://ftp.archlinux.org/extra/os/i686/${_pkgbase}-${pkgver}-${pkgrel32}-i686.pkg.tar.xz")
+
+package() {
+  mkdir -p "${pkgdir}"/usr/lib32
+  cp -rPf "${srcdir}"/usr/lib/* "${pkgdir}"/usr/lib32
+  sed -i 's#/usr/lib#&32#' "${pkgdir}"/usr/lib32/pkgconfig/wbclient.pc
+}
+
+md5sums=('01855b6481a0b94f8f1477c4eaa9644a')

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+killall Agent.exe
+exec env WINEPREFIX="/home/icewootra/.wine" wine 'C:/users/Public/Application Data/Battle.net/Agent/Agent.beta.2581/Agent.exe' --nohttpauth

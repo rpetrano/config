@@ -1,0 +1,5 @@
+pcm.jack_audio_1 {
+	type asym
+	playback.pcm "hw:Loopback,0,0"
+	capture.pcm "hw:Loopback,1,0"
+}

@@ -1,0 +1,55 @@
+diff a/drivers/net/wireless/ath/ath9k/ath9k.h b/drivers/net/wireless/ath/ath9k/ath9k.h
+--- a/drivers/net/wireless/ath/ath9k/ath9k.h
++++ b/drivers/net/wireless/ath/ath9k/ath9k.h
+@@ -632,6 +632,7 @@ void ath_ant_comb_update(struct ath_softc *sc);
+ /********************/
+ 
+ #define ATH9K_PCI_CUS198 0x0001
++#define ATH9K_PCI_CUS230 0x0002
+ 
+ /*
+  * Default cache line size, in bytes.
+diff a/drivers/net/wireless/ath/ath9k/init.c b/drivers/net/wireless/ath/ath9k/init.c
+--- a/drivers/net/wireless/ath/ath9k/init.c
++++ b/drivers/net/wireless/ath/ath9k/init.c
+@@ -521,11 +521,14 @@ static void ath9k_init_platform(struct ath_softc *sc)
+ 	if (common->bus_ops->ath_bus_type != ATH_PCI)
+ 		return;
+ 
+-	if (sc->driver_data & ATH9K_PCI_CUS198) {
++	if (sc->driver_data & (ATH9K_PCI_CUS198 |
++			       ATH9K_PCI_CUS230)) {
+ 		ah->config.xlna_gpio = 9;
+ 		ah->config.xatten_margin_cfg = true;
+ 
+-		ath_info(common, "Set parameters for CUS198\n");
++		ath_info(common, "Set parameters for %s\n",
++			 (sc->driver_data & ATH9K_PCI_CUS198) ?
++			 "CUS198" : "CUS230");
+ 	}
+ }
+ 
+diff a/drivers/net/wireless/ath/ath9k/pci.c b/drivers/net/wireless/ath/ath9k/pci.c
+--- a/drivers/net/wireless/ath/ath9k/pci.c
++++ b/drivers/net/wireless/ath/ath9k/pci.c
+@@ -51,16 +51,18 @@ static DEFINE_PCI_DEVICE_TABLE(ath_pci_id_table) = {
+ 			 PCI_VENDOR_ID_AZWAVE,
+ 			 0x2126),
+ 	  .driver_data = ATH9K_PCI_CUS198 },
++
++	/* PCI-E CUS230 */
+ 	{ PCI_DEVICE_SUB(PCI_VENDOR_ID_ATHEROS,
+ 			 0x0032,
+ 			 PCI_VENDOR_ID_AZWAVE,
+ 			 0x2152),
+-	  .driver_data = ATH9K_PCI_CUS198 },
++	  .driver_data = ATH9K_PCI_CUS230 },
+ 	{ PCI_DEVICE_SUB(PCI_VENDOR_ID_ATHEROS,
+ 			 0x0032,
+ 			 PCI_VENDOR_ID_FOXCONN,
+ 			 0xE075),
+-	  .driver_data = ATH9K_PCI_CUS198 },
++	  .driver_data = ATH9K_PCI_CUS230 },
+ 
+ 	{ PCI_VDEVICE(ATHEROS, 0x0032) }, /* PCI-E  AR9485 */
+ 	{ PCI_VDEVICE(ATHEROS, 0x0033) }, /* PCI-E  AR9580 */

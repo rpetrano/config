@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec env WINEPREFIX="/home/icewootra/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix "/home/icewootra/.wine/drive_c/users/Public/Start Menu/Programs/Battle.net/Battle.net.lnk"

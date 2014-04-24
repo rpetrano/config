@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Battle.net
+Exec=/usr/bin/battle.net
+Type=Application
+StartupNotify=true
+Comment=Click here to launch Hearthstone.
+Path=/home/icewootra/.wine/dosdevices/c:/Program Files/Battle.net/

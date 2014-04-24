@@ -1,0 +1,13 @@
+Description='Brozova WLAN'
+Interface=wlp3s0
+Connection=wireless
+Security=wpa
+ESSID='Petranovic'
+BSSID='00:24:d1:79:5a:14'
+Key='tajnasifra123'
+IP=static
+Address='192.168.0.11/24'
+Gateway='192.168.0.1'
+DNS=('83.139.104.2' '83.139.105.2')
+# Uncomment this if your ssid is hidden
+#Hidden=yes
