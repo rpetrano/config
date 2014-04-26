@@ -9,21 +9,17 @@
   <Global>
     <ExtraData>
       <ExtraDataItem name="GUI/DetailsPageBoxes" value="general,preview,system,display,storage,audio,network,usb,sharedFolders,description"/>
-      <ExtraDataItem name="GUI/GroupDefinitions/" value="m=876f0f64-2886-4f67-9a6e-08218b99230a"/>
       <ExtraDataItem name="GUI/HostScreenSaverDisabled" value="false"/>
       <ExtraDataItem name="GUI/Input/AutoCapture" value="true"/>
       <ExtraDataItem name="GUI/Input/HostKeyCombination" value="65508"/>
-      <ExtraDataItem name="GUI/LastItemSelected" value="m=Windows"/>
-      <ExtraDataItem name="GUI/LastWindowPosition" value="1,20,1918,1059,max"/>
+      <ExtraDataItem name="GUI/LastWindowPosition" value="2,2,956,1057"/>
       <ExtraDataItem name="GUI/MaxGuestResolution" value="1920,1080"/>
       <ExtraDataItem name="GUI/RecentFolderCD" value="/home/icewootra/Downloads/temp/Microsoft.Visual.Studio.Ultimate.2013-KOPiE[rarbg]"/>
       <ExtraDataItem name="GUI/RecentListCD" value="/home/icewootra/Downloads/temp/Microsoft.Visual.Studio.Ultimate.2013-KOPiE[rarbg]/kopie-vs2013-ultimate-en.iso;/home/icewootra/Downloads/Microsoft.Windows.8.1.Enterprise.X64-iNDiSO[rarbg]/Win_Ent_8.1_64BIT.ISO;/mnt/usb/vs2010.iso;/mnt/usb/windows7.iso;"/>
-      <ExtraDataItem name="GUI/SplitterSizes" value="383,1533"/>
+      <ExtraDataItem name="GUI/SplitterSizes" value="190,760"/>
       <ExtraDataItem name="GUI/SuppressMessages" value=",confirmInputCapture,confirmGoingFullscreen,remindAboutMouseIntegration,remindAboutAutoCapture,remindAboutWrongColorDepth"/>
     </ExtraData>
-    <MachineRegistry>
-      <MachineEntry uuid="{876f0f64-2886-4f67-9a6e-08218b99230a}" src="/home/icewootra/VirtualBox VMs/Windows/Windows.vbox"/>
-    </MachineRegistry>
+    <MachineRegistry/>
     <MediaRegistry>
       <HardDisks/>
       <DVDImages/>

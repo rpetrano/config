@@ -15,3 +15,4 @@ usbmux:x:140:140:usbmux user:/:/sbin/nologin
 marko:x:1001:1001::/home/marko:/bin/bash
 postfix:x:73:73::/var/spool/postfix:/bin/false
 example:x:1002:1002::/home/example:/bin/bash
+ntp:x:87:87:Network Time Protocol:/var/lib/ntp:/bin/false

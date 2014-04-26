@@ -22,6 +22,7 @@
 !/home/icewootra/build/**/*.install
 !/home/icewootra/build/**/*.patch
 !/home/icewootra/build/**/*.diff
+!/home/icewootra/.ghc/*.conf
 !/home/icewootra/.config/**
 /home/icewootra/.config/MonoDevelop*/*/
 /home/icewootra/.config/MonoDevelop/

@@ -44,3 +44,4 @@ postdrop:x:75:
 postfix:x:73:
 example:x:1002:
 ntp:x:87:
+colord:x:124:
