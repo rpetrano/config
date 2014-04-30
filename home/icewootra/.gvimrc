@@ -3,7 +3,7 @@
 " set background=dark
 " highlight Normal guifg=white guibg=black
 
-colorscheme solarized
+colorscheme zenburn
 
 set guioptions=					" Hide all GUI elements
 

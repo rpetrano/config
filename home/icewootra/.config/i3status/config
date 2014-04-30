@@ -18,7 +18,10 @@ order += "disk /"
 #order += "wireless wlan0"
 order += "ethernet enp0s25"
 #order += "battery 0"
+order += "cpu_usage"
 order += "load"
+order += "cpu_temperature 0"
+order += "nvidia_temperature"
 order += "tztime local"
 
 wireless wlan0 {
@@ -49,7 +52,22 @@ tztime local {
 }
 
 load {
-        format = "%1min"
+        format = "%1min %5min %15min"
+        max_threshold = 3
+}
+
+cpu_usage {
+        format = "%usage"
+}
+
+cpu_temperature 0 {
+        format = "CPU: %degrees °C"
+        max_threshold = 60
+}
+
+nvidia_temperature {
+        format = "GPU: %degrees °C"
+        max_threshold = 50
 }
 
 disk "/" {
