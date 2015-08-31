@@ -1,0 +1,10 @@
+@                               1D IN SOA   local. root.local. (
+                                    42    ; serial (yyyymmdd##)
+                                    3H    ; refresh
+                                    15M   ; retry
+                                    1W    ; expiry
+                                    1D )  ; minimum ttl
+
+                                1D  IN  NS      localhost.
+
+2.1                             1D  IN  PTR     rpetrano.duckdns.org.

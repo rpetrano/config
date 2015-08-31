@@ -1,0 +1,10 @@
+@                               1D IN SOA   duckdns.org. root.duckdns.org. (
+                                    42    ; serial (yyyymmdd##)
+                                    3H    ; refresh
+                                    15M   ; retry
+                                    1W    ; expiry
+                                    1D )  ; minimum ttl
+
+                                1D  IN  NS      localhost.
+
+rpetrano.duckdns.org.           1D  IN  A       10.3.1.2

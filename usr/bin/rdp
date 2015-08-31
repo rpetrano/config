@@ -1,0 +1,6 @@
+#!/bin/sh
+
+host="$1"
+[ -z "$2" ] && display='@1' || display="$2"
+
+exec rdesktop-vrdp -K "$host" -T "$host" -d "$display" -g 1920x1080 -r usb -r clipboard:CLIPBOARD -r disk:root\\=/

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Starcraft 2
+Exec=/usr/bin/sc2
+Type=Application
+StartupNotify=true
+Comment=Click here to launch Starcraft 2.
+Path=/home/icewootra/.wine/dosdevices/c:/Program Files/Battle.net/

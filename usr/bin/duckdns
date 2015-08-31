@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for i in /etc/duckdns.d/*.conf; do
+	. "$i"
+	status=$(curl -fsS "https://www.duckdns.org/update?domains=$domains&token=$token")
+	[ "$?" -eq "0" -a "$status" = "OK" ] || echo "Domains $domains failed to update with message: $status"
+done
+

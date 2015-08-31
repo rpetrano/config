@@ -1,0 +1,2 @@
+#!/bin/bash
+exec wine "/home/icewootra/.wine/drive_c/Program Files/Heroes of the Storm/Support/HeroesSwitcher.exe"

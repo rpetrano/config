@@ -29,6 +29,7 @@
 /etc/ssl/cert.pem
 /etc/tinc/icewootra/rsa_key.priv
 /etc/trusted-key.key
+/etc/dhcpcd.duid
 
 !/home/icewootra/.*
 !/home/icewootra/*.sh
@@ -96,6 +97,8 @@
 
 /usr/lib/modules
 /var/lib/docker/*/subvolumes/**
+
+!/var/named/*
 
 .viminfo
 *.p12

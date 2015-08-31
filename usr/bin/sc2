@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec wine "/home/icewootra/.wine/drive_c/Program Files/StarCraft II/Support/SC2Switcher.exe"

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Performance tweak
+# wine reg add "HKLM\\System\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\" /v PagedPoolSize /t REG_DWORD /d 402653184 /f
+
+# Fix font rendering
+# wine reg add 'HKCU\Software\Valve\Steam' /v DWriteEnable /t REG_DWORD /d 00000000
+
+WINEDEBUG=-all exec wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe "$@" >/dev/null 2>&1
