@@ -42,23 +42,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+g split h
@@ -130,11 +118,10 @@ mode "resize" {
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Shift+h resize shrink width 5 px or 5 ppt
+        bindsym Shift+j resize grow height 5 px or 5 ppt
+        bindsym Shift+k resize shrink height 5 px or 5 ppt
+        bindsym Shift+l resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -142,6 +129,8 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+bindsym $mod+F1 move workspace to output left
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -151,11 +140,12 @@ bar {
 
 focus_follows_mouse no
 
-assign [class="XTerm"] 1
+#assign [class="XTerm"] 1
 assign [class="Firefox"] 3
 assign [class="Thunderbird"] 4
 assign [class="Steam"] 5
 assign [class="Skype"] 6
+assign [class="Spotify"] 7
 
 for_window [class=".*"] border pixel 2
 for_window [class="Steam"] floating enable
@@ -163,6 +153,10 @@ for_window [class="Skype"] floating enable
 for_window [class="Galculator"] floating enable
 for_window [class="Ardour"] floating enable
 for_window [class="Qjackctl"] floating enable
+
+bindsym Print exec scrot "$HOME/screenshots/%Y-%m-%d-%H-%M-%S.png"
+bindsym --release Mod+Print exec scrot -s "$HOME/screenshots/%Y-%m-%d-%H-%M-%S.png"
+bindsym --release Mod1+grave exec /home/icewootra/usbmouse.sh
 
 exec dunst
 exec --no-startup-id feh --bg-max "$HOME/background"

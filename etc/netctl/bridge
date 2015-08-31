@@ -1,0 +1,10 @@
+Description="Bridge connection"
+Interface=br0
+Connection=bridge
+BindsToInterfaces=(enp0s25 tap0 tap1)
+IP=static
+Address=("10.3.1.2/16")
+Gateway="10.3.1.1"
+DNS=("127.0.0.1" "194.146.109.223" "194.146.109.224")
+## Ignore (R)STP and immediately activate the bridge
+#SkipForwardingDelay=yes

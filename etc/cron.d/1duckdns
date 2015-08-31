@@ -1,0 +1,4 @@
+SHELL=/bin/bash
+PATH=/usr/bin
+MAILTO=icewootra
+* * * * * root duckdns

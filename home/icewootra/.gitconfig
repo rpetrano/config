@@ -1,3 +1,5 @@
 [user]
 	email = robi.petranovic@gmail.com
 	name = Robert Petranovic
+[core]
+	editor = vim

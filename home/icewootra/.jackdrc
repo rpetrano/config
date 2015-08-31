@@ -1,1 +1,0 @@
-/usr/bin/jackd -P89 -dalsa -dhw:USB -r48000 -p128 -n3

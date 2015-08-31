@@ -1,0 +1,4 @@
+# vim: set ft=sudoers:
+david ALL=(root) /usr/bin/pacman -S*,(root) /usr/bin/pacman -U*,(root) /usr/bin/pkgfile -u
+Defaults:david env_reset
+Defaults:david !targetpw

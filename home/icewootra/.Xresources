@@ -33,3 +33,4 @@
 
 !Xterm
 xterm*faceName: DejaVu Sans Mono:style=Book:size=9:antialias=true
+XTerm*metaSendsEscape: true

@@ -1,0 +1,30 @@
+# vim:ft=sh
+
+# Rotate backups after specified number of incremental backups.
+rotate=10
+
+# Backup server location.
+# Leave empty for local backup.
+host=""
+
+# Source directory to backup.
+src=/*
+
+# Backup directory location on backup server.
+dest="/mnt/usbdisk"
+
+# How to name each incremental backup.
+# stamp=$(date +%Y%m%d%H%M%S)
+
+# SSH command to connect to server.
+# This is provied to rsync as -e parameter.
+# Ignored if doing local update.
+# ssh="ssh"
+
+# Rsync command to be used on remote server.
+# This is provided to rsync as --rsync-path parameter.
+# Ignored if doing local update.
+# rsync="ionice -c 2 -n 7 nice -n 19 rsync"
+
+# Other rsync parameters.
+params="-aXAHE --inplace --exclude={'/dev/*','/proc/*','/sys/*','/tmp/*','/run/*','/mnt/*','/media/*','/lost+found'}"

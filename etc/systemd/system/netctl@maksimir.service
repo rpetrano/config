@@ -1,6 +1,0 @@
-.include /usr/lib/systemd/system/netctl@.service
-
-[Unit]
-Description=A basic static ethernet connection
-BindsTo=sys-subsystem-net-devices-enp0s25.device
-After=sys-subsystem-net-devices-enp0s25.device

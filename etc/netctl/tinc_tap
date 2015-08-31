@@ -1,0 +1,10 @@
+Description='tuntap connection - tinc'
+Interface=tap1
+Connection=tuntap
+Mode='tap'
+User='nobody'
+Group='nobody'
+
+## Example IP configuration
+#IP=static
+#Address='10.10.1.2/16'

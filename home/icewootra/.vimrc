@@ -124,22 +124,31 @@ set smartcase						" ignore case when searching only if the string being searche
 set history=50						" keep 50 lines of command line history
 set ruler							" show the cursor position all the time
 set foldcolumn=1					" so I can see open folds.
+set foldmethod=marker				" use comments to mark start and end of fold
 set showcmd							" display incomplete commands
 set incsearch						" find matches as you type search string
 
 set wildmenu						" Shows IMBA menu for auto completing Vim commands
 set shell=bash						" Use bash as shell for external commands
-set shellcmdflag=-ic				" Bashrc aliases
+"set shellcmdflag=-ic				" Bashrc aliases
 set tabpagemax=30					" Support up to 30 tabs
+
+
+" Highlight tailing spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
 colorscheme zenburn
 set bg=dark
 
+" Some evil forces are destroying vim's best abbreviations
+cabbrev E Explore
 
 set completeopt=longest,menuone,preview				" Omnicomplete (auto complete) options
 
 " <C-p> doesn't type in the highlighted choice
-inoremap <expr> <C-p> pumvisible() ? "\<lt>Up>" : "\<lt>C-p>"			
+inoremap <expr> <C-p> pumvisible() ? "\<lt>Up>" : "\<lt>C-p>"
 
 " <C-n> doesn't type in the highlighted choice
 inoremap <expr> <C-n> pumvisible() ? "\<lt>Down>" : "\<lt>C-n>"
@@ -158,6 +167,27 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 autocmd BufWritePost,BufLeave,WinLeave ?* mkview
 autocmd BufWinEnter ?* silent loadview
 
+" Create fency titles
+command -nargs=? Title call Title(<args>)
+
+function Title (...)
+	if a:0 > 0
+		let width = a:1
+	else
+		let width = 45
+	end
+
+	let oldreg = getreg('"')
+	execute "normal! O\<esc>"
+	execute "normal! " . width . "a#\<esc>"
+	execute "normal! j:center " . width . "\<C-m>"
+	execute "normal! \<C-v>$hy"
+	execute "normal! gvkp"
+	execute "normal! hr "
+	execute "normal! f#r "
+	execute "normal! jddk"
+	let @" = oldreg
+endfunction
 
 
 
@@ -165,17 +195,17 @@ autocmd BufWinEnter ?* silent loadview
 " Plugins
 
 " NETRW
-let g:netrw_preview   = 1									" Preview vertically
-let g:netrw_winsize   = 250									" Window size
+"let g:netrw_preview   = 1									" Preview vertically
+"let g:netrw_winsize   = 250									" Window size
 let g:netrw_browsex_viewer = "xdg-open-bg"					" Open files with xdg-open in backgrund
 
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of the browser.
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
 
 " Change directory to the current buffer when opening files.
-set autochdir
+"set autochdir
 
 
 " SYNTASTIC

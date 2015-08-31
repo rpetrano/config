@@ -6,6 +6,45 @@
 127.0.0.1	localhost.localdomain	localhost test-dsl
 ::1		localhost.localdomain	localhost
 
+10.2.3.1 wiki.element-internal.hr
 
-10.0.0.3	collabmate.me
-# End of file
+10.5.6.1 adresar.robi
+10.5.6.2 todo
+10.5.6.3 dogovori
+10.5.6.4 robi.instantor.com
+10.5.6.5 robi-element.hr
+10.5.6.5 secure.robi-element.hr
+
+10.5.6.6 robi.ele-math.com
+10.5.6.6 mia.robi.ele-math.com
+10.5.6.6 jmi.robi.ele-math.com
+10.5.6.6 oam.robi.ele-math.com
+10.5.6.6 dea.robi.ele-math.com
+10.5.6.6 jca.robi.ele-math.com
+10.5.6.6 secure.robi.ele-math.com
+
+10.5.6.7 robi.instantor.pl
+
+10.5.6.9 nas
+
+10.5.6.10 robi.dsl-platform.com
+10.5.6.10 api-robi.dsl-platform.com
+10.5.6.10 lift-robi.dsl-platform.com
+10.5.6.10 panel-robi.dsl-platform.com
+10.5.6.10 mail-robi.dsl-platform.com
+10.5.6.10 docs-robi.dsl-platform.com
+10.5.6.10 shared-robi.dsl-platform.com
+10.5.6.10 static-robi.dsl-platform.com
+10.5.6.10 blog-robi.dsl-platform.com
+10.5.6.10 learn-robi.dsl-platform.com
+
+10.5.6.11 robi-dev.dsl-platform.com
+10.5.6.11 api-robi-dev.dsl-platform.com
+10.5.6.11 lift-robi-dev.dsl-platform.com
+10.5.6.11 panel-robi-dev.dsl-platform.com
+10.5.6.11 mail-robi-dev.dsl-platform.com
+10.5.6.11 docs-robi-dev.dsl-platform.com
+10.5.6.11 shared-robi-dev.dsl-platform.com
+10.5.6.11 static-robi-dev.dsl-platform.com
+10.5.6.11 blog-robi-dev.dsl-platform.com
+10.5.6.11 learn-robi-dev.dsl-platform.com

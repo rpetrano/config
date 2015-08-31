@@ -1,16 +1,34 @@
 *
 !*/
 
+/.docker/**
+
 !/etc/**
 /etc/shadow*
 /etc/gshadow*
+/etc/crypttab*
 /etc/ssl/certs/**
 /etc/.pwd.lock
 /etc/pacman.d/gnupg/**
 /etc/ssh/*_key
 /etc/ssh/*_key.pub
+/etc/ssh/moduli
 /etc/java-7-openjdk/*.bfc
 /etc/ld.so.cache
+/etc/ca-certificates/extracted/**
+/etc/duckdns.d/*
+/etc/docker/key.json
+/etc/ipsec.d/cacerts/*
+/etc/ipsec.d/certs/*
+/etc/ipsec.d/private/*
+/etc/ipsec.secrets
+/etc/mtab
+/etc/murmur.ini
+/etc/openvpn/keys/**
+/etc/ssh/moduli
+/etc/ssl/cert.pem
+/etc/tinc/icewootra/rsa_key.priv
+/etc/trusted-key.key
 
 !/home/icewootra/.*
 !/home/icewootra/*.sh
@@ -39,7 +57,10 @@
 /home/icewootra/.config/spotify/**
 /home/icewootra/.config/stetic/**
 /home/icewootra/.config/teamviewer*/**
+/home/icewootra/.config/qBittorrent/qBittorrent-resume.conf
 /home/icewootra/.rnd
+/home/icewootra/.erlang.cookie
+/home/icewootra/.esd_auth
 
 !/root/.*
 !/root/*.sh
@@ -68,13 +89,19 @@
 /root/.config/stetic/**
 /root/.config/teamviewer*/**
 /root/.rnd
+/root/.erlang.cookie
 
+**/.config/fish/fish_history
 /boot/grub/*.cfg
+
+/usr/lib/modules
+/var/lib/docker/*/subvolumes/**
 
 .viminfo
 *.p12
 *.iso
 *.bin
+*.log
 .pgpass
 .Xauthority
 .bash_history

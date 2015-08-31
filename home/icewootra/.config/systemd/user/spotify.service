@@ -1,0 +1,5 @@
+[Unit]
+Description=Play spotify!
+
+[Service]
+ExecStart=/home/icewootra/spotify.sh play

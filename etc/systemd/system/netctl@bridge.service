@@ -1,0 +1,10 @@
+.include /usr/lib/systemd/system/netctl@.service
+
+[Unit]
+Description=Bridge connection
+BindsTo=sys-subsystem-net-devices-enp0s25.device
+BindsTo=sys-subsystem-net-devices-tap0.device
+BindsTo=sys-subsystem-net-devices-tap1.device
+After=sys-subsystem-net-devices-enp0s25.device
+After=sys-subsystem-net-devices-tap0.device
+After=sys-subsystem-net-devices-tap1.device

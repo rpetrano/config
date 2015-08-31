@@ -3,7 +3,9 @@
 #
 # <file system>	<dir>	<type>	<options>	<dump>	<pass>
 # UUID=1b587d14-3bd3-4662-acf1-e5fc9f23ffa0 LABEL=root
-/dev/sda2           	/         	f2fs      	rw,relatime,active_logs=6,discard	0 0
+LABEL=icewootra           	/         	btrfs      	defaults,discard	0 0
 
-# UUID=8021-9C51 LABEL=BOOT
-/dev/sda1           	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro,noauto	0 2
+LABEL=UEFI           	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro,x-systemd.automount	0 2
+
+LABEL=swap	none swap defaults 0 0
+#UUID=3d29e145-8c1d-414e-8ca7-5e8cb5699584 /mnt/usbdisk xfs defaults,x-systemd.automount 0 2

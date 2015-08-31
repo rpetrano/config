@@ -9,17 +9,17 @@
   <Global>
     <ExtraData>
       <ExtraDataItem name="GUI/DetailsPageBoxes" value="general,preview,system,display,storage,audio,network,usb,sharedFolders,description"/>
-      <ExtraDataItem name="GUI/HostScreenSaverDisabled" value="false"/>
-      <ExtraDataItem name="GUI/Input/AutoCapture" value="true"/>
-      <ExtraDataItem name="GUI/Input/HostKeyCombination" value="65508"/>
-      <ExtraDataItem name="GUI/LastWindowPosition" value="2,2,956,1057"/>
-      <ExtraDataItem name="GUI/MaxGuestResolution" value="1920,1080"/>
-      <ExtraDataItem name="GUI/RecentFolderCD" value="/home/icewootra/Downloads/temp/Microsoft.Visual.Studio.Ultimate.2013-KOPiE[rarbg]"/>
-      <ExtraDataItem name="GUI/RecentListCD" value="/home/icewootra/Downloads/temp/Microsoft.Visual.Studio.Ultimate.2013-KOPiE[rarbg]/kopie-vs2013-ultimate-en.iso;/home/icewootra/Downloads/Microsoft.Windows.8.1.Enterprise.X64-iNDiSO[rarbg]/Win_Ent_8.1_64BIT.ISO;/mnt/usb/vs2010.iso;/mnt/usb/windows7.iso;"/>
-      <ExtraDataItem name="GUI/SplitterSizes" value="190,760"/>
-      <ExtraDataItem name="GUI/SuppressMessages" value=",confirmInputCapture,confirmGoingFullscreen,remindAboutMouseIntegration,remindAboutAutoCapture,remindAboutWrongColorDepth"/>
+      <ExtraDataItem name="GUI/GroupDefinitions/" value="m=5bb6958e-0806-4558-b671-8a1f5d70423f"/>
+      <ExtraDataItem name="GUI/LastItemSelected" value="m=Windows XP"/>
+      <ExtraDataItem name="GUI/LastWindowPosition" value="2,2,1916,1057"/>
+      <ExtraDataItem name="GUI/RecentFolderCD" value="/home/icewootra/Downloads/Windows XP Professional SP3 Original 32-Bit"/>
+      <ExtraDataItem name="GUI/RecentListCD" value="/home/icewootra/Downloads/Windows XP Professional SP3 Original 32-Bit/XP SP3 Original.iso;"/>
+      <ExtraDataItem name="GUI/SplitterSizes" value="488,1422"/>
+      <ExtraDataItem name="GUI/SuppressMessages" value=",confirmGoingFullscreen,remindAboutMouseIntegration,remindAboutAutoCapture,confirmInputCapture,warnAboutInaccessibleMedia"/>
     </ExtraData>
-    <MachineRegistry/>
+    <MachineRegistry>
+      <MachineEntry uuid="{5bb6958e-0806-4558-b671-8a1f5d70423f}" src="/home/icewootra/VirtualBox VMs/Windows XP/Windows XP.vbox"/>
+    </MachineRegistry>
     <MediaRegistry>
       <HardDisks/>
       <DVDImages/>

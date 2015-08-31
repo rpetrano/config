@@ -1,0 +1,10 @@
+Description='tuntap connection - openvpn'
+Interface=tap0
+Connection=tuntap
+Mode='tap'
+User='nobody'
+Group='nobody'
+
+## Example IP configuration
+#IP=static
+#Address='10.10.1.2/16'

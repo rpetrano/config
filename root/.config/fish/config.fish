@@ -1,0 +1,1 @@
+/home/icewootra/.config/fish/config.fish

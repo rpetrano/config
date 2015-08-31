@@ -1,0 +1,27 @@
+window_location 0 0
+window_size 956 1057
+zoom_level 1
+font_size 11
+show_toolbar 1
+sprung_layout 0
+module_position "Hydrogen" inputoutput 222 86
+module_position "Midi Through" input 730 8
+module_position "Midi Through" output 537 12
+module_position "Scarlett 6i6 USB" input 292 8
+module_position "Scarlett 6i6 USB" output 8 8
+module_position "ardour" inputoutput 480 61
+module_position "calf" inputoutput 413.5 114
+module_position "ffmpeg" inputoutput 765 716
+module_position "intel" input 733 395
+module_position "intel" output 219 281
+module_position "mumble" inputoutput 401 442
+module_position "system" input 733.5 96
+module_position "system" output 220.5 111
+module_position "twitch" inputoutput 752 714
+module_position "twitch-01" inputoutput 752 800
+module_position "vlc_18451" inputoutput 443 136
+module_position "vlc_18522" inputoutput 429 150
+module_position "vlc_19614" inputoutput 401 211
+module_position "vlc_24795" inputoutput 358 150
+module_position "vlc_24897" inputoutput 317 115
+module_position "vlc_31190" inputoutput 374 115
