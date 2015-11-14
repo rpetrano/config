@@ -13,6 +13,7 @@ alias termdown='termdown -a -b -c 60 -f clb8x10 -t PWN3D'
 alias pbcopy='xclip -selection clipboard -i'
 alias pbpaste='xclip -selection clipboard -o'
 alias json='json_reformat | pygmentize -l json'
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 PS1='[\u@\h \w]\$ '
 
 # Man pages coloring
@@ -39,6 +40,12 @@ nchttpl () {
 		link="$(cat)"
 		echo -n "<a href='$link'>$link</a>"
 	} | nc -l "$@"
+}
+
+pbpipe() {
+	pbcopy
+	pbpaste
+	#exec xclip -selection clipboard -o
 }
 
 export PATH="$PATH:$HOME/.cabal/bin"

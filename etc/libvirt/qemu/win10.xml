@@ -124,24 +124,6 @@ or other application using the libvirt API.
       </source>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x0b' function='0x0'/>
     </hostdev>
-    <hostdev mode='subsystem' type='usb' managed='yes'>
-      <source>
-        <vendor id='0x1b1c'/>
-        <product id='0x1b05'/>
-      </source>
-    </hostdev>
-    <hostdev mode='subsystem' type='usb' managed='yes'>
-      <source>
-        <vendor id='0x046d'/>
-        <product id='0xc068'/>
-      </source>
-    </hostdev>
-    <hostdev mode='subsystem' type='usb' managed='yes'>
-      <source>
-        <vendor id='0x04d9'/>
-        <product id='0x1503'/>
-      </source>
-    </hostdev>
     <memballoon model='virtio'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>
     </memballoon>

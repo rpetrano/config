@@ -1,5 +1,5 @@
 ##### Primary configuration settings #####
-########################################## 
+##########################################
 # This configuration file is used to manage the behavior of the Salt Minion.
 # With the exception of the location of the Salt Master Server, values that are
 # commented out but have an empty line after the comment are defaults that need
@@ -88,6 +88,7 @@
 #  cab_u: 14-15
 #
 # Where cache data goes.
+# This data may contain sensitive data and should be protected accordingly.
 #cachedir: /var/cache/salt/minion
 
 # Verify and set permissions on configuration directories at startup.
@@ -350,9 +351,7 @@
 # failure detected in the state execution. Defaults to False.
 #failhard: False
 #
-# autoload_dynamic_modules turns on automatic loading of modules found in the
-# environments on the master. This is turned on by default. To turn of
-# autoloading modules when states run, set this value to False.
+# Reload the modules prior to a highstate run.
 #autoload_dynamic_modules: True
 #
 # clean_dynamic_modules keeps the dynamic modules on the minion in sync with
@@ -512,6 +511,10 @@
 
 # The level of messages to send to the console.
 # One of 'garbage', 'trace', 'debug', info', 'warning', 'error', 'critical'.
+#
+# The following log levels are considered INSECURE and may log sensitive data:
+# ['garbage', 'trace', 'debug']
+#
 # Default: 'warning'
 #log_level: warning
 
@@ -528,7 +531,21 @@
 
 # The format of the console logging messages. Allowed formatting options can
 # be seen here: http://docs.python.org/library/logging.html#logrecord-attributes
+#
+# Console log colors are specified by these additional formatters:
+#
+# %(colorlevel)s
+# %(colorname)s
+# %(colorprocess)s
+# %(colormsg)s
+#
+# Since it is desirable to include the surrounding brackets, '[' and ']', in
+# the coloring of the messages, these color formatters also include padding as
+# well.  Color LogRecord attributes are only available for console logging.
+#
+#log_fmt_console: '%(colorlevel)s %(colormsg)s'
 #log_fmt_console: '[%(levelname)-8s] %(message)s'
+#
 #log_fmt_logfile: '%(asctime)s,%(msecs)03.0f [%(name)-17s][%(levelname)-8s] %(message)s'
 
 # This can be used to control logging levels more specificically.  This

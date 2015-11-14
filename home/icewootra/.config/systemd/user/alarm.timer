@@ -3,7 +3,7 @@ Description=Alarm at 8:00
 
 [Timer]
 Unit=spotify.service
-OnCalendar=Mon-Sun *-*-* 8:00
+OnCalendar=Mon-Sun *-*-* 7:00
 
 [Install]
 WantedBy=timers.target

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 dbus_cmd() {
 	exec dbus-send --session --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.$1
@@ -17,7 +17,7 @@ fi
 
 case $1 in
 	play)
-		if dbus_query PlaybackStatus | not grep -q Playing; then
+		if dbus_query PlaybackStatus | grep -qv Playing; then
 			dbus_cmd PlayPause
 		fi
 		;;

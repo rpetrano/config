@@ -37,6 +37,7 @@
 !/home/icewootra/*.cpp
 !/home/icewootra/*.py
 !/home/icewootra/*.pl
+!/home/icewootra/tmux.conf
 !/home/icewootra/build/**/PKGBUILD
 !/home/icewootra/build/**/*.install
 !/home/icewootra/build/**/*.patch

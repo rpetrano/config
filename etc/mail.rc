@@ -1,6 +1,6 @@
 #@ /etc/mail.rc
-#@ Configuration file for Mail(1) v14.8.4
-# S-nail(1): v14.8.4 / 2015-07-31
+#@ Configuration file for Mail(1) v14.8.5
+# S-nail(1): v14.8.5 / 2015-09-05
 
 ## The standard POSIX 2008/Cor 1-2013 mandates the following initial settings:
 # (Keep in sync: ./main.c:_startup(), ./nail.rc, ./nail.1:"Initial settings"!)
@@ -61,6 +61,10 @@ set dot
 
 # Startup into interactive mode even if the (given) mailbox is empty
 #set emptystart
+
+# When replying to or forwarding a message the comment and name parts of email
+# addresses are removed unless this variable is set.
+#set fullnames
 
 # [OPTION] Add more entries to the history as is done by default
 set history-gabby
