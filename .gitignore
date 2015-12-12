@@ -99,6 +99,8 @@
 /usr/lib/modules
 /var/lib/docker/*/subvolumes/**
 
+/mnt
+
 !/var/named/*
 
 .viminfo

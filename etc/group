@@ -63,3 +63,6 @@ named:x:40:
 kvm:x:78:
 samba:x:996:icewootra
 libvirt:x:995:icewootra
+staff:x:1004:icewootra
+postgres:x:88:
+nvidia-persistenced:x:143:

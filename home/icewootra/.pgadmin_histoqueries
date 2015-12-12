@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<histoqueries>
+ <histoquery>-- Table: store.store
+DROP TABLE IF EXISTS store.assets;
+
+CREATE TABLE store.assets
+(
+  store_id uuid NOT NULL references store.store(store_id),
+  store_logo_uri text NOT NULL,
+  store_static_uri text NOT NULL
+);
+ALTER TABLE store.assets
+  OWNER TO scanngo_store;
+  
+CREATE INDEX store_id_index ON store.assets(store_id);
+
+</histoquery>
+ <histoquery>-- Table: store.store
+DROP TABLE IF EXISTS article.article;
+
+CREATE TABLE article.article
+(
+  store_id uuid NOT NULL references store.store(store_id),
+  article_id uuid NOT NULL primary key,
+  article_name text NOT NULL,
+  article_title text NOT NULL,
+  article_price DECIMAL(11,2)
+);
+ALTER TABLE article.article
+  OWNER TO scanngo_store;
+  
+CREATE INDEX store_id_index ON article.article(store_id);
+
+</histoquery>
+ <histoquery>-- Table: store.store
+DROP TABLE IF EXISTS article.sale;
+
+CREATE TABLE article.sale
+(
+  store_id uuid NOT NULL references store.store(store_id),
+  article_id uuid NOT NULL,
+  sale_discount DECIMAL(3,2),
+  PRIMARY KEY(store_id, article_id)
+);
+ALTER TABLE article.sale
+  OWNER TO scanngo_store;
+  
+CREATE INDEX article_sale_store_id_index ON article.sale(store_id);
+CREATE INDEX article_sale_article_id_index ON article.sale(article_id);
+
+</histoquery>
+ <histoquery>-- Table: article.article
+
+DROP TABLE article.article;
+
+CREATE TABLE article.article
+(
+  store_id uuid NOT NULL,
+  article_id uuid NOT NULL,
+  article_name text NOT NULL,
+  article_title text NOT NULL,
+  article_price numeric(11,2) NOT NULL,
+  article_barcode BYTEA NOT NULL,
+  CONSTRAINT article_pkey PRIMARY KEY (article_id),
+  CONSTRAINT article_store_id_fkey FOREIGN KEY (store_id)
+      REFERENCES store.store (store_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE article.article
+  OWNER TO scanngo_store;
+
+-- Index: article.store_id_index
+
+-- DROP INDEX article.store_id_index;
+
+CREATE INDEX store_id_index
+  ON article.article
+  USING btree
+  (store_id);
+
+</histoquery>
+ <histoquery>CREATE TABLE &quot;user&quot;.user_imei
+(
+  phone_imei NUMERIC(15,0) primary key not null
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE &quot;user&quot;.user_imei
+  OWNER TO scanngo_store;
+
+-- Index: article.store_id_index
+
+-- DROP INDEX article.store_id_index;
+
+
+</histoquery>
+ <histoquery>CREATE TABLE &quot;user&quot;.user
+(
+  phone_imei NUMERIC(15,0) not null references &quot;user&quot;.phone_imei(phone_imei),
+  user_id uuid not null primary key DEFAULT uuid_generate_v4()
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE &quot;user&quot;.user
+  OWNER TO scanngo_store;
+
+-- Index: article.store_id_index
+
+-- DROP INDEX article.store_id_index;
+
+
+</histoquery>
+ <histoquery>CREATE TABLE &quot;user&quot;.todo_list
+(
+  user_id uuid not null references &quot;user&quot;.user(user_id),
+  todo_list_id uuid not null primary key default uuid_generate_v4()
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE &quot;user&quot;.todo_list
+  OWNER TO scanngo_store;
+
+CREATE TABLE &quot;user&quot;.todo_list_article
+(
+  todo_list_id uuid not null references &quot;user&quot;.todo_list(todo_list_id),
+  article_id uuid not null references &quot;article&quot;.article(article_id),
+  count integer not null default 1,
+  UNIQUE(todo_list_id, article_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE &quot;user&quot;.todo_list_article
+  OWNER TO scanngo_store;
+
+
+-- Index: article.store_id_index
+
+-- DROP INDEX article.store_id_index;
+
+
+</histoquery>
+ <histoquery>CREATE TABLE &quot;user&quot;.shopping_cart
+(
+  user_id uuid not null references &quot;user&quot;.user(user_id),
+  shopping_cart_id uuid not null primary key default uuid_generate_v4()
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE &quot;user&quot;.shopping_cart
+  OWNER TO scanngo_store;
+
+CREATE TABLE &quot;user&quot;.shopping_cart_article
+(
+  shopping_cart_id uuid not null references &quot;user&quot;.shopping_cart(shopping_cart_id),
+  article_id uuid not null references &quot;article&quot;.article(article_id),
+  count integer not null default 1,
+  UNIQUE(shopping_cart_id, article_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE &quot;user&quot;.shopping_cart_article
+  OWNER TO scanngo_store;
+
+
+-- Index: article.store_id_index
+
+-- DROP INDEX article.store_id_index;
+
+
+</histoquery>
+ <histoquery>DROP TABLE IF EXISTS &quot;user&quot;.invoice;
+
+CREATE TABLE &quot;user&quot;.invoice
+(
+  user_id uuid not null references &quot;user&quot;.user(user_id),
+  invoice_id uuid not null primary key default uuid_generate_v4(),
+  invoice_base_price DECIMAL(11,2) not null,
+  invoice_vat DECIMAL(11,2) not null,
+  invoice_total DECIMAL(11,2) not null
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE &quot;user&quot;.invoice
+  OWNER TO scanngo_store;
+
+CREATE TABLE &quot;user&quot;.invoice_article
+(
+  invoice_id uuid not null references &quot;user&quot;.invoice(invoice_id),
+  article_id uuid not null references &quot;article&quot;.article(article_id),
+  price DECIMAL(11,2) not null,
+  count integer not null default 1,
+  UNIQUE(invoice_id, article_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE &quot;user&quot;.invoice_article
+  OWNER TO scanngo_store;
+
+
+-- Index: article.store_id_index
+
+-- DROP INDEX article.store_id_index;
+
+
+</histoquery>
+ <histoquery>-- Table: article.sale
+
+DROP TABLE article.sale;
+
+CREATE TABLE article.sale
+(
+  article_id uuid NOT NULL,
+  sale_discount numeric(3,2),
+  CONSTRAINT sale_pkey FOREIGN KEY (article_id)
+      REFERENCES article.article (article_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  UNIQUE(article_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE article.sale
+  OWNER TO scanngo_store;
+
+-- Index: article.article_sale_article_id_index
+
+-- DROP INDEX article.article_sale_article_id_index;
+
+CREATE INDEX article_sale_article_id_index
+  ON article.sale
+  USING btree
+  (article_id);
+
+-- Index: article.article_sale_store_id_index
+
+-- DROP INDEX article.article_sale_store_id_index;
+
+CREATE INDEX article_sale_store_id_index
+  ON article.sale
+  USING btree
+  (article_id);
+
+</histoquery>
+</histoqueries>

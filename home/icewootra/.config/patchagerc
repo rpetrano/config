@@ -1,5 +1,5 @@
 window_location 0 0
-window_size 1916 1057
+window_size 956 1057
 zoom_level 1
 font_size 11
 show_toolbar 1
@@ -16,7 +16,7 @@ module_position "intel" input 733 395
 module_position "intel" output 219 281
 module_position "mumble" inputoutput 401 442
 module_position "system" input 733.5 96
-module_position "system" output 220.5 111
+module_position "system" output 93.5 736
 module_position "twitch" inputoutput 752 714
 module_position "twitch-01" inputoutput 752 800
 module_position "vlc_18451" inputoutput 443 136
