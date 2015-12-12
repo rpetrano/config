@@ -63,6 +63,10 @@
 /home/icewootra/.rnd
 /home/icewootra/.erlang.cookie
 /home/icewootra/.esd_auth
+/home/icewootra/.config/obs-studio/basic/profiles/*/service.json
+/home/icewootra/.config/obs-studio/**/*.json.bak
+/home/icewootra/.config/obs-studio/**/*.gz
+/home/icewootra/.config/obs-studio/logs
 
 !/root/.*
 !/root/*.sh
