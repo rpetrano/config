@@ -59,11 +59,11 @@ or other application using the libvirt API.
       <boot order='1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x08' function='0x0'/>
     </disk>
-    <disk type='file' device='cdrom'>
+    <disk type='block' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <source file='/home/icewootra/downloads/Win10_SingleLang_English_x64.iso'/>
       <target dev='hda' bus='ide'/>
       <readonly/>
+      <boot order='2'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
     <disk type='block' device='cdrom'>
@@ -86,7 +86,7 @@ or other application using the libvirt API.
       <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:48:d7:0d'/>
+      <mac address='52:54:00:5e:03:76'/>
       <source bridge='br0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
@@ -104,7 +104,9 @@ or other application using the libvirt API.
     <input type='tablet' bus='usb'/>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
-    <graphics type='vnc' port='-1' autoport='yes'/>
+    <graphics type='vnc' port='-1' autoport='yes' listen='127.0.0.1'>
+      <listen type='address' address='127.0.0.1'/>
+    </graphics>
     <sound model='ich6'>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/>
     </sound>
@@ -131,6 +133,10 @@ or other application using the libvirt API.
   <qemu:commandline>
     <qemu:env name='QEMU_AUDIO_DRV' value='pa'/>
     <qemu:env name='QEMU_AUDIO_TIMER_PERIOD' value='150'/>
+    <qemu:env name='QEMU_AUDIO_DAC_FIXED_FREQ' value='48000'/>
+    <qemu:env name='QEMU_AUDIO_DAC_FIXED_FMT' value='S32'/>
+    <qemu:env name='QEMU_AUDIO_ADC_FIXED_FREQ' value='48000'/>
+    <qemu:env name='QEMU_AUDIO_ADC_FIXED_FMT' value='S32'/>
     <qemu:env name='QEMU_PA_SERVER' value='localhost'/>
     <qemu:env name='QEMU_PA_SINK' value='jack_out_windowz'/>
     <qemu:env name='QEMU_PA_SOURCE' value='jack_in_windowz'/>

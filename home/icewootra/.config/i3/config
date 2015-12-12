@@ -156,7 +156,7 @@ for_window [class="Qjackctl"] floating enable
 
 bindsym Print exec scrot "$HOME/screenshots/%Y-%m-%d-%H-%M-%S.png"
 bindsym --release Mod+Print exec scrot -s "$HOME/screenshots/%Y-%m-%d-%H-%M-%S.png"
-bindsym --release Mod1+grave exec /home/icewootra/usbmouse.sh
+bindsym --release Mod1+grave exec /home/icewootra/projects/qemu-utils/guests/unix/qemu_swap.sh
 
 exec dunst
 exec --no-startup-id feh --bg-max "$HOME/background"
