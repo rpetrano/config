@@ -1,0 +1,7 @@
+[Unit]
+Description=JACK Audio system DBUS activation service.
+
+[Service]
+Type=dbus
+#ExecStart=/usr/bin/jackdbus auto
+BusName=org.jackaudio.service

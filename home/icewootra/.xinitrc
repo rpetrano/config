@@ -1,1 +1,16 @@
-.xinitrc-origigi
+#!/bin/sh
+
+#export LIBVA_DRIVER_NAME=vdpau
+#export SHELL=fish
+
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
+xrdb ~/.Xresources
+setxkbmap -option terminate:ctrl_alt_bksp -option ctrl:nocaps
+
+exec i3

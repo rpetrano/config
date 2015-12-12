@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #export LIBVA_DRIVER_NAME=vdpau
-export SHELL=fish
+#export SHELL=fish
 
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
   for f in /etc/X11/xinit/xinitrc.d/*; do
@@ -20,7 +20,6 @@ firefox &
 thunderbird &
 spotify &
 lxqt-policykit-agent &
-synergy &
 (sleep 2s; ./jack_connect.sh) &
 
 exec i3
