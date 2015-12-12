@@ -11,7 +11,7 @@ host=""
 src=/*
 
 # Backup directory location on backup server.
-dest="/mnt/usbdisk"
+dest="/mnt/disk/backup"
 
 # How to name each incremental backup.
 # stamp=$(date +%Y%m%d%H%M%S)
@@ -27,4 +27,4 @@ dest="/mnt/usbdisk"
 # rsync="ionice -c 2 -n 7 nice -n 19 rsync"
 
 # Other rsync parameters.
-params="-aXAHE --inplace --exclude={'/dev/*','/proc/*','/sys/*','/tmp/*','/run/*','/mnt/*','/media/*','/lost+found'}"
+params="-aXAHE --inplace --exclude={'/dev/*','/proc/*','/sys/*','/tmp/*','/run/*','/mnt/*','/media/*','/lost+found','/var/lib/docker/*','/var/lib/libvirt/images/*'}"
