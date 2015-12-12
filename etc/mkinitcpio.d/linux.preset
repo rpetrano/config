@@ -3,7 +3,7 @@
 ALL_config="/etc/mkinitcpio.conf"
 ALL_kver="/boot/vmlinuz-linux"
 
-PRESETS=('default' 'fallback')
+PRESETS=('default' 'fallback' 'nvidia' 'xen')
 
 #default_config="/etc/mkinitcpio.conf"
 default_image="/boot/initramfs-linux.img"
@@ -12,3 +12,11 @@ default_image="/boot/initramfs-linux.img"
 #fallback_config="/etc/mkinitcpio.conf"
 fallback_image="/boot/initramfs-linux-fallback.img"
 fallback_options="-S autodetect"
+
+nvidia_config="/etc/mkinitcpio.d/nvidia.conf"
+nvidia_image="/boot/initramfs-linux-nvidia.img"
+#nvidia_options=""
+
+xen_config="/etc/mkinitcpio.d/xen.conf"
+xen_image="/boot/initramfs-linux-xen.img"
+#xen_options=""

@@ -1,18 +1,18 @@
-# mkinitcpio preset file for the 'linux-lts' package
+# mkinitcpio preset file for the 'linux-git' package
 
 ALL_config="/etc/mkinitcpio.conf"
-ALL_kver="/boot/vmlinuz-linux-lts"
+ALL_kver="/boot/vmlinuz-linux-git"
 
 PRESETS=('default' 'fallback' 'xen')
 
 #default_config="/etc/mkinitcpio.conf"
-default_image="/boot/initramfs-linux-lts.img"
+default_image="/boot/initramfs-linux-git.img"
 #default_options=""
 
 #fallback_config="/etc/mkinitcpio.conf"
-fallback_image="/boot/initramfs-linux-lts-fallback.img"
+fallback_image="/boot/initramfs-linux-git-fallback.img"
 fallback_options="-S autodetect"
 
 xen_config="/etc/mkinitcpio.d/xen.conf"
-xen_image="/boot/initramfs-linux-lts-xen.img"
+xen_image="/boot/initramfs-linux-git-xen.img"
 #xen_options=""
